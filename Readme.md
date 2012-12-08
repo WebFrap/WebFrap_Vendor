@@ -13,9 +13,8 @@ KEINE (x)GPL(artige) Lizensen!
 
 ## Liste der integrierten Vendor Bibliotheken
 
-* https://github.com/davidpersson/beanstalk
-
-
+* https://github.com/davidpersson/beanstalk Beanstald connector
+* https://github.com/dflydev/dflydev-markdown Markdown rendering
 
 ## Copyright (c) 2012, Webfrap.net
 All rights reserved.
