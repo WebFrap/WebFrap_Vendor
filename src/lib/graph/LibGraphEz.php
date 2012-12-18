@@ -77,6 +77,8 @@ class LibGraphEz
    * @var string
    */
   public $fileName = null;
+  
+  public $font = 'data/font/default.ttf';
 
   /**
    * @var PBase
@@ -102,7 +104,6 @@ class LibGraphEz
   {
 
     $this->graph = new ezcGraphLineChart();
-    $this->graph->title = $this->title;
     
     $this->setDefaultSettings();
     
@@ -120,25 +121,13 @@ class LibGraphEz
   public function setDefaultSettings()
   {
     
+    $this->chooseDriver();
     
+    $this->graph->title = $this->title;
 
-    
-    //$this->graph->driver->options->imageFormat = IMG_PNG; 
-    
-  }//end public function setDefaultSettings */
-  
-  /**
-   * 
-   */
-  public function chooseDriver()
-  {
-    $this->graph->driver = new ezcGraphGdDriver();
-    $this->graph->options->font = PATH_FW.'data/font/default.ttf';
+    $this->graph->legend->position = ezcGraph::RIGHT;
+    $this->graph->legend->title = $this->legend; 
 
-    $this->graph->driver->options->supersampling = 1;
-    //$this->graph->driver->options->jpegQuality = 100;
-    $this->graph->driver->options->imageFormat = IMG_PNG; 
-    
     // Set the maximum font size to 8 for all chart elements
     $this->graph->options->font->maxFontSize = 12;
     $this->graph->options->font->minFontSize = 10;
@@ -147,8 +136,20 @@ class LibGraphEz
     $this->graph->title->font->maxFontSize = 16; 
     $this->graph->title->font->minFontSize = 10; 
     
-    $this->graph->legend->position = ezcGraph::RIGHT;
-    $this->graph->legend->title = $this->legend; 
+  }//end public function setDefaultSettings */
+  
+  /**
+   * 
+   */
+  public function chooseDriver()
+  {
+    
+    $this->graph->driver = new ezcGraphGdDriver();
+    $this->graph->options->font = PATH_FW.$this->font;
+
+    $this->graph->driver->options->supersampling = 1;
+    //$this->graph->driver->options->jpegQuality = 100;
+    $this->graph->driver->options->imageFormat = IMG_PNG; 
     
   }//end public function chooseDriver */
 
@@ -161,8 +162,7 @@ class LibGraphEz
     //header('Content-Type: image/jpeg');
     //if( $name )
       //header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
-    
-    $this->chooseDriver();
+
     $this->graph->renderToOutput( $this->width, $this->height );
     
   }//end public function out */
