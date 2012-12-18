@@ -56,6 +56,12 @@ class LibGraphEz
   public $title = null;
   
   /**
+   * Der Title des Graphen
+   * @var string
+   */
+  public $legend = 'Legend';
+  
+  /**
    * Daten zum Rendern des Graphen
    * @var LibSqlQuery
    */
@@ -113,15 +119,10 @@ class LibGraphEz
    */
   public function setDefaultSettings()
   {
-    // Set the maximum font size to 8 for all chart elements
-    //$this->graph->options->font->maxFontSize = 12;
-    //$this->graph->options->font->minFontSize = 10;
     
-    // Set the font size for the title independently to 14
-    //$this->graph->title->font->maxFontSize = 14; 
-    //$this->graph->title->font->minFontSize = 10; 
     
-    //$this->graph->driver->options->supersampling = 1;
+
+    
     //$this->graph->driver->options->imageFormat = IMG_PNG; 
     
   }//end public function setDefaultSettings */
@@ -133,6 +134,22 @@ class LibGraphEz
   {
     $this->graph->driver = new ezcGraphGdDriver();
     $this->graph->options->font = PATH_FW.'data/font/default.ttf';
+
+    $this->graph->driver->options->supersampling = 1;
+    //$this->graph->driver->options->jpegQuality = 100;
+    $this->graph->driver->options->imageFormat = IMG_PNG; 
+    
+    // Set the maximum font size to 8 for all chart elements
+    $this->graph->options->font->maxFontSize = 12;
+    $this->graph->options->font->minFontSize = 10;
+    
+    // Set the font size for the title independently to 14
+    $this->graph->title->font->maxFontSize = 16; 
+    $this->graph->title->font->minFontSize = 10; 
+    
+    $this->graph->legend->position = ezcGraph::RIGHT;
+    $this->graph->legend->title = $this->legend; 
+    
   }//end public function chooseDriver */
 
   /**
