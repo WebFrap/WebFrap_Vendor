@@ -98,6 +98,14 @@ class LibGraphEz
   }//end public function __construct */
   
   /**
+   * 
+   */
+  public function prepare()
+  {
+    
+  }//end public function prepare */
+
+  /**
    * @return void
    */
   public function render(  )
@@ -124,6 +132,7 @@ class LibGraphEz
     $this->chooseDriver();
     
     $this->graph->title = $this->title;
+    $this->graph->palette = new LibGraphPaletteDefault();
 
     $this->graph->legend->position = ezcGraph::RIGHT;
     $this->graph->legend->title = $this->legend; 
@@ -159,9 +168,9 @@ class LibGraphEz
   public function out( $name = null )
   {
     
-    //header('Content-Type: image/jpeg');
-    //if( $name )
-      //header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
+    header('Content-Type: image/png');
+    if( $name )
+      header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
 
     $this->graph->renderToOutput( $this->width, $this->height );
     
