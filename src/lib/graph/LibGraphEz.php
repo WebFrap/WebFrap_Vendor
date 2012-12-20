@@ -40,14 +40,15 @@ class LibGraphEz
 {
   
   /**
+   * Will fit in a bw4 element
    * @var int
    */
-  public $width = 850;
+  public $width = 483;
 
   /**
    * @var int
    */
-  public $height = 550;
+  public $height = 300;
   
   /**
    * Der Title des Graphen
@@ -78,6 +79,10 @@ class LibGraphEz
    */
   public $fileName = null;
   
+  /**
+   * Path to the font
+   * @var string
+   */
   public $font = 'data/font/default.ttf';
 
   /**
@@ -169,8 +174,12 @@ class LibGraphEz
   {
     
     header('Content-Type: image/png');
+    
     if( $name )
       header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
+      
+    header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+    header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Datum in der Vergangenheit
 
     $this->graph->renderToOutput( $this->width, $this->height );
     

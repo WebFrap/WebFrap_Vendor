@@ -36,7 +36,7 @@ LibVendorEz::load();
  * @subpackage vendor/graph
  *
  */
-class LibGraphEz
+class LibGraphZeta
 {
   
   /**

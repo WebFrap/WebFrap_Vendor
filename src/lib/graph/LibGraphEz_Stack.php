@@ -20,7 +20,7 @@
  * @subpackage vendor/graph
  *
  */
-class LibGraphEz_Line
+class LibGraphEz_Stack
   extends LibGraphEz
 {
 ////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ class LibGraphEz_Line
    * Graph type
    * @var string
    */
-  public $type = 'pie';
+  public $type = 'stack';
   
 ////////////////////////////////////////////////////////////////////////////////
 // Output
@@ -45,7 +45,7 @@ class LibGraphEz_Line
     
     $this->env = $env;
     
-    $this->graph = new ezcGraphLineChart();
+    $this->graph = new ezcGraphBarChart();
     
   }//end public function __construct */
   
@@ -88,14 +88,18 @@ class LibGraphEz_Line
     $this->graph->legend->title = $this->legend; 
 
     // Set the maximum font size to 8 for all chart elements
-    $this->graph->options->font->maxFontSize = 12;
+    $this->graph->options->font->maxFontSize = 11;
     $this->graph->options->font->minFontSize = 10;
-    
 
-    
-    $this->graph->axisLabelRenderer = new ezcGraphAxisRotatedLabelRenderer();
-    $this->graph->axisLabelRenderer->angle = 45;
-    $this->graph->axisSpace = .2; 
+    /* */
+
+    //$this->graph->yAxis = new ezcGraphChartElementLabeledAxis();
+    //$this->graph->yAxis->axisLabelRenderer->showZeroValue = true; 
+
+    $this->graph->xAxis->axisLabelRenderer = new ezcGraphAxisRotatedLabelRenderer();
+    $this->graph->xAxis->axisLabelRenderer->angle = 45;
+    $this->graph->xAxis->axisSpace = .1; 
+   
     
   }//end public function setDefaultSettings */
   
