@@ -85,17 +85,13 @@ class LibGraphEz_Line
     $this->graph->palette = new LibGraphPaletteDefault();
 
     $this->graph->legend->position = ezcGraph::RIGHT;
+    //$this->graph->legend->landscapeSize = .5;
     $this->graph->legend->title = $this->legend; 
 
     // Set the maximum font size to 8 for all chart elements
     $this->graph->options->font->maxFontSize = 12;
     $this->graph->options->font->minFontSize = 10;
-    
-
-    
-    $this->graph->axisLabelRenderer = new ezcGraphAxisRotatedLabelRenderer();
-    $this->graph->axisLabelRenderer->angle = 45;
-    $this->graph->axisSpace = .2; 
+ 
     
   }//end public function setDefaultSettings */
   

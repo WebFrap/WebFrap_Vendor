@@ -20,7 +20,7 @@
  * @subpackage vendor/graph
  *
  */
-class LibGraphEz_Stack
+class LibGraphEz_Bar
   extends LibGraphEz
 {
 ////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@ class LibGraphEz_Stack
    * Graph type
    * @var string
    */
-  public $type = 'stack';
+  public $type = 'bar';
   
 ////////////////////////////////////////////////////////////////////////////////
 // Output
@@ -46,7 +46,6 @@ class LibGraphEz_Stack
     $this->env = $env;
     
     $this->graph = new ezcGraphBarChart();
-    $this->graph->options->stackBars = true;
     
   }//end public function __construct */
   
@@ -94,19 +93,22 @@ class LibGraphEz_Stack
 
     /* */
 
-    //$this->graph->yAxis = new ezcGraphChartElementLabeledAxis();
+    $this->graph->yAxis = new ezcGraphChartElementNumericAxis();
+    $this->graph->yAxis->axisSpace = .1; 
     //$this->graph->yAxis->axisLabelRenderer->showZeroValue = true; 
-
+    /*
     $this->graph->xAxis->axisLabelRenderer = new ezcGraphAxisRotatedLabelRenderer();
-    $this->graph->xAxis->axisLabelRenderer->angle = 45;
-    $this->graph->xAxis->axisSpace = .1; 
-   
+    $this->graph->xAxis->axisLabelRenderer->angle = 20;
+    $this->graph->xAxis->axisSpace = .2; 
+    
+    
+   	*/
     
   }//end public function setDefaultSettings */
   
 
   
-}// end class LibGraphEz
+}// end class LibGraphEz_Bar
 
 
 
