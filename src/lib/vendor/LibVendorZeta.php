@@ -46,7 +46,7 @@ class LibVendorEz
   public static function load()
   {
     
-    if( self::$loaded )
+    if ( self::$loaded )
       return;
 
     spl_autoload_register( 'ezcBase::autoload' );

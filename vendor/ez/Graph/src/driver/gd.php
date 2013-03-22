@@ -186,7 +186,7 @@ class ezcGraphGdDriver extends ezcGraphDriver
                 return array(
                     'width' => $data[0],
                     'height' => $data[1],
-                    'image' => imagecreatefromgif( $file )
+                    'image' => imagecreatefromgif ( $file )
                 );
             case 2:
                 return array(

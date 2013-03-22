@@ -175,7 +175,7 @@ class LibGraphEz
     
     header('Content-Type: image/png');
     
-    if( $name )
+    if ( $name )
       header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
       
     header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1

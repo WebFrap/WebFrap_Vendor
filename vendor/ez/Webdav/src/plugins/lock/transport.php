@@ -107,7 +107,7 @@ class ezcWebdavLockTransport
      */
     public function processResponse( ezcWebdavResponse $response )
     {
-        if( isset( self::$processingMap[( $responseClass = get_class( $response ) )] ) )
+        if ( isset( self::$processingMap[( $responseClass = get_class( $response ) )] ) )
         {
             $method = self::$processingMap[$responseClass];
             return $this->$method( $response );

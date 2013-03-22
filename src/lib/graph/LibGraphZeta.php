@@ -142,7 +142,7 @@ class LibGraphZeta
   {
     
     //header('Content-Type: image/jpeg');
-    //if( $name )
+    //if ( $name )
       //header('Content-Disposition: attachment;filename="'.urlencode($name).'"');
     
     $this->chooseDriver();
