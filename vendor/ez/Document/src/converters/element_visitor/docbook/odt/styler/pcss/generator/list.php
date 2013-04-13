@@ -241,7 +241,7 @@ class ezcDocumentOdtListStyleGenerator extends ezcDocumentOdtStyleGenerator
     {
         $previousMargin = 0;
 
-        foreach( $listStyle->childNodes as $listStyleChild )
+        foreach ( $listStyle->childNodes as $listStyleChild )
         {
             if ( $listStyleChild->nodeType === XML_ELEMENT_NODE
               && strpos( $listStyleChild->localName, 'list-level-style-' ) === 0

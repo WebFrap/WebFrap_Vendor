@@ -168,7 +168,7 @@ class ezcWebdavPluginRegistry
                 {
                     throw new ezcWebdavInvalidHookException( $class, $hook );
                 }
-                foreach( $callbacks as $callback )
+                foreach ( $callbacks as $callback )
                 {
                     if ( !is_callable( $callback ) )
                     {

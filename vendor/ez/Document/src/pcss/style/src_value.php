@@ -31,7 +31,7 @@ class ezcDocumentPcssStyleSrcValue extends ezcDocumentPcssStyleValue
     {
         $this->value = array();
         $values = preg_split( '(\s*,\s*)', $value );
-        foreach( $values as $url )
+        foreach ( $values as $url )
         {
             if ( preg_match( '(^\s*(?:url|local)\s*\(\s*(?P<url>\S+)\s*\)\s*$)', $url, $match ) )
 

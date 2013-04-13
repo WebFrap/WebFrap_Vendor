@@ -67,7 +67,7 @@ class ezcDocumentOdtTextProcessor
 
         // Match more than 2 spaces and tabs and line breaks
         preg_match_all(
-            '((?: ){2,}|\\t+|\\n+)',
+            '((?: ) {2,}|\\t+|\\n+)',
             $textNode->data,
             $matches,
             PREG_OFFSET_CAPTURE

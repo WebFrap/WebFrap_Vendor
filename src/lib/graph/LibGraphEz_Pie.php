@@ -51,7 +51,7 @@ class LibGraphEz_Pie
     $this->setDefaultSettings();
     
     // Add data
-    foreach( $this->data as $label => $data )
+    foreach ( $this->data as $label => $data )
     {
       $this->graph->data[$label] = new ezcGraphArrayDataSet( $data );
     }

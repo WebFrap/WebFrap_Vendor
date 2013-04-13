@@ -141,10 +141,10 @@ class ezcDocumentWikiCreoleTokenizer extends ezcDocumentWikiTokenizer
                 'match' => '(\\A(?P<value>\\||' . self::WHITESPACE_CHARS . '*->' . self::WHITESPACE_CHARS . '*))S' ),
             array(
                 'class' => 'ezcDocumentWikiInterWikiLinkToken',
-                'match' => '(\\A(?P<value>([A-Za-z]+):(?:[A-Z][a-z0-9_-]+){2,}))S' ),
+                'match' => '(\\A(?P<value>([A-Za-z]+):(?:[A-Z][a-z0-9_-]+) {2,}))S' ),
             array(
                 'class' => 'ezcDocumentWikiInternalLinkToken',
-                'match' => '(\\A(?P<value>(?:[A-Z][a-z]+){2,}))S' ),
+                'match' => '(\\A(?P<value>(?:[A-Z][a-z]+) {2,}))S' ),
             array(
                 'class' => 'ezcDocumentWikiExternalLinkToken',
                 'match' => '(\\A(?P<match>(?P<value>[a-z]+://\S+?))[,.?!:;"\']?(?:' . self::WHITESPACE_CHARS . '|\\n|\\||]]|\\||$))S' ),

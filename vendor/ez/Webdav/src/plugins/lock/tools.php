@@ -78,7 +78,7 @@ class ezcWebdavLockTools
             $headers = array_unique( $headers );
         }
 
-        foreach( $headers as $headerName )
+        foreach ( $headers as $headerName )
         {
             $to->setHeader( $headerName, $from->getHeader( $headerName ) );
         }

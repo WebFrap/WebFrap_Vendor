@@ -53,7 +53,7 @@ class ezcSearchRstXmlExtractor /* implements ezcSearchExtractor */
         $xpath = new DOMXPath($dom);
         $tbody = $xpath->evaluate( "//p|//h1|//ol|//ul|//dl|//img|//a", $tbody );
         $body = '';
-        foreach( $tbody as $item )
+        foreach ( $tbody as $item )
         {
             switch ( $item->tagName )
             {

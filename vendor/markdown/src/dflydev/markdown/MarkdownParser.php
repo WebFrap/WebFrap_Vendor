@@ -473,7 +473,7 @@ class MarkdownParser implements IMarkdownParser {
 				(?>			# Repeated marker group
 					[ ]{0,2}	# Zero, one, or two spaces.
 					\1			# Marker character
-				){2,}		# Group repeated at least twice
+				) {2,}		# Group repeated at least twice
 				[ ]*		# Tailing spaces
 				$			# End of line.
 			}mx',

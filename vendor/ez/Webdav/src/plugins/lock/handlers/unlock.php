@@ -100,7 +100,7 @@ class ezcWebdavLockUnlockRequestResponseHandler extends ezcWebdavLockRequestResp
 
         foreach ( $propFindMultistatusRes->responses as $propFindRes )
         {
-            foreach( $propFindRes->responses as $propStatRes )
+            foreach ( $propFindRes->responses as $propStatRes )
             {
                 if ( $propStatRes->storage->contains( 'lockdiscovery' ) )
                 {

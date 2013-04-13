@@ -188,7 +188,7 @@ class ezcDocumentWikiConfluenceTokenizer extends ezcDocumentWikiTokenizer
     {
         // Match title, property string and plugin contents
         //   {code:title=Bar.java|borderStyle=solid} ... {code}
-        if ( preg_match( '(^{(?P<type>[a-zA-Z]+)(?::(?P<params>[^}]+))?}(?:(?P<text>.*){\\1})?$)s', $plugin->content, $match ) )
+        if ( preg_match( '(^{(?P<type>[a-zA-Z]+)(?::(?P<params>[^}]+))?}(?:(?P<text>.*) {\\1})?$)s', $plugin->content, $match ) )
         {
             $plugin->type = $match['type'];
 

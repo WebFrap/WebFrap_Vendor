@@ -873,7 +873,7 @@ abstract class ezcWebdavSimpleBackend extends ezcWebdavBackend implements ezcWeb
         }
 
         $successProps = new ezcWebdavBasicPropertyStorage();
-        foreach(  $request->updates as $updatedProperty )
+        foreach (  $request->updates as $updatedProperty )
         {
             $successProp = clone $updatedProperty;
             $successProp->clear();
